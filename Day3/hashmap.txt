@@ -1,0 +1,22 @@
+Hashmap in java:
+java.util.package. It provides the basic implementation of Mapinterface of java. It store the dat in a key
+key-value mapping, in which every key is mapped to exactly one value of any data type.
+
+keys should be unique as the key is used to retrieve the corresponding value from the map.
+they are denoted as HashMap<k,v>, where k stands for key and v stands for value.
+syntax:
+public class HashMap<k,v> extends AbstractMap<k,v> implements Map<k,v>
+
+constructors in HashMap in java:
+1. HashMap()
+2.HashMap(int initialCapacity)
+3.HashMap(int initialCapacity,float loadFactor)
+4.HashMap(Map map)
+
+Hashing: Hasmap in java works on the prnciple of hashin-an algorithm to map object data to some representative
+integer values.
+
+Hashing is the process of converting an object into intege form by using the hashCode(). hashCode()
+method of object class return the memory reference of object in an integer form. So the Hash function
+is applied to the key object to calculate the index of the bucket in order to stroke and retrieve any
+key-value pair.
