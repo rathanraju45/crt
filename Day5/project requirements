@@ -1,0 +1,10 @@
+Banking Application:
+
+class name:BankingApp
+main method: display menu(welcome message, selcting options, 1.deposit 2.withdraw 3.display balance 4.exit 5.default)
+deposit method:
+    1.user defined exception(negative amount exception).
+withdraw method:
+    1.user defined exception(negative amount exception).
+    2.withdraw amount greater than balance.(insufficient funds exception).
+

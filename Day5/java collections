@@ -1,0 +1,21 @@
+Set:
+The sets are  unique type of data structure mostly used because it does not allow the repetition of the elements. The
+basic operations of sets are shown below:
+eg:
+A hashset is created and elements are stored in the set using the add methods.
+
+Set types:
+Linked set, hashsed set, and tree set.
+=>Hashset:
+Hashset doesn't guarantee any order, it allows on null key, fastest for common operations like add, search and remove.
+
+=>Linked Hashset:
+They keep elements in the order they are added, allows one null key, its close second.
+
+=>TreeSet:
+Sorts all objects, doesnt allow null key, much slower, because it needs to perform sorting.
+
+=>Queue:
+It is a data structure that follows(First in First out) structure.
+In the following example, we will create the LinkedBlockingQueue, which is of dynamic size. It's not required to
+provide size while creating LinkedBlockingQueue.
