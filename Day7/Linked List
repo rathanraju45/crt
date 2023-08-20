@@ -1,0 +1,12 @@
+Linked List:
+A linked list is considered as a data structure similar to any other data structure like arrays, stack, and queues. Here
+every node is interconnected to the next node through a memory address link.
+
+A LinkedList has three elements:
+=>Head
+=>Nodes
+=>Tail
+
+=>This is one of the most useful data structure and highly used in real-world scenarios because of its high-speed
+capacity and ast addition and deletion. This basic collection structure is the data in adn the address which points
+to the next node functions as the guide of the respective node.

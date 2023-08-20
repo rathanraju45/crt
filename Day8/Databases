@@ -1,0 +1,132 @@
+RDBMS & SQL:
+1.What is RDBMS?
+=> Rdbms stands for Relational Management System. In RDBMS data is represented in terms of tables where each table has
+its own primary key.
+
+Properties:
+a.All of their values in a column have the same data type.
+b.Each row is unique.
+c.Each column has a unique name.
+
+2.Types of Database languages?
+=> Databases languages can be used to read, store and update the data
+=> There are 4 types of database languages:
+1.DDL
+2.DCL
+3.DML
+4.TCL
+
+1.DDL:
+=> Data Definition Language. It is used to define database structure or patterns.
+=> It is used to create schema, tables, indexes, constraints etc., in the database.
+=> Using DDL statements, you can create the skeleton of the database. Data definition language is is used to store the
+information of meta data like the tables and so on.
+=> Here are the tasks that come under DDL:
+    1. Create   : It is used to create objects in the database.
+    2. Alter    : It is used to alter the structure of the database.
+    3. Drop     : It is used to delete objects from the database.
+    4. Truncate : It is used to remove all records from a table.
+    5. Rename   : It is used to rename an object.
+    6. Comment  : It is used to comment on the data dictionary.
+2.DCL:
+=> Data Control Language. It is used to receive the stored or saved data.
+=> The DCL execution is transactional. It also has rollback parameters.
+=> Here are some tasks that DCL can do:
+    1. Grant  : It is used to give user access privileges to a database.
+    2. Revoke : It is used to take back privileges from user.
+3.DML:
+=> Data Manipulation Language. It is used for accessing data in database. It handles user's requests.
+=> Tasks that comes under DML:
+    1. select       : It is used to retrieve data from a database.
+    2. Insert       : It is used to update existing data within a table.
+    3. Delete       : It is used to delete all records from a table.
+    4. Update       : It is used to update existing data within a table.
+    5. Merge        : It performs UPSERT Operations. i.e, Insert or update operations.
+    6. Call         : It is used to call a structured query language or a java subprogram.
+    7. Explain Plan : It has the parameter of explaining data.
+    8. LockTable    : It controls concurrency.
+4.TCL:
+=> TCL is used to changes made by the DML statements. TCL can be grouped into transactions.
+Tasks:
+1. Commit   : It is used to save the transaction on the database.
+2. RollBack : It is used to restore the database to original since the last commit.
+
+ACID properties:
+=> As we know the integrity is one of the properties of DBMS, so in order to maintain this property there are some
+properties describes called ACID Properties:
+    => A-ATOMICITY   : Either the operation performed or not, there is no in between.
+    => C-CONSISTENCY : (means the value should remain preserved always, which means if a change in the database is
+                       made, it should remain preserved always.
+    => I-ISOLATION   : Where no data should affect the other one
+    => D-DURABILITY  : This stands that the data after he successful execution of the operation becomes permanent in
+                       the database.
+
+3.What is sharding:
+It is a type of Database partitioning in which large database is divided or partitioned into smaller data, also known
+as shards. These shards are not only smaller, but also faster and hence easy to manage.
+
+Keys in DBMS:
+=> Keys ae the part of relational databases. It is used to uniquely identify any record or row of data from the table.
+=> It is also used to establish relationships between tables.
+
+Primary Key:
+=> An entity can contain multiple keys. The key which is  most suitable from those lists become a primary key.
+
+Candidate Key:
+=> The remaining attributes except for primary key are considered as a candidate key. The candidate keys are as strong
+as primary key.
+
+Super Key:
+=> It is a super set of a candidate Key.
+
+Foreign Key:
+=> Foreign keys are the columns of the table which is used to point to the primary key of another table.
+
+Relationships in DBMS:
+=> One-to-One Relationship:
+    => Such relationship exists when each record of one table can be related to one record of other table.
+
+=> One-to-Many Relationship:
+    => Such relationship exists when each record of one table can be related to one or more than one record of the other
+    table.
+
+=> Many-to-Many Relationship:
+    => Such a relationship exists when each record of the first table can be related to one or more than one record of
+    the second table and a single record of the second table can be related to one or more than one rcord of the first
+    table.)
+    ex: Customer-Product
+    =>Each customer can buy more than one product and a product can be bought by many customers.
+
+Assignment:
+
+Designing an Organization Database
+Table1: Employees
+.employee_id(Primary Key)
+.first_name
+.last_name
+.date_of_birth
+.email
+.phone
+.department_id(Foreign Key)
+
+Table2: Department
+.department_id(Primary Key)
+.department_name
+
+*insert at least 5 sample employee records in "Employee" table
+*insert at least 3 sample department records into the "Department" table.
+
+Solution:
+
+Creating tables:
+CREATE TABLE Department(department_id INT PRIMARY KEY,department_name VARCHAR(10))
+CREATE TABLE Employees(employee_id INT PRIMARY KEY,first_name VARCHAR(20),last_name VARCHAR(20),date_of_birth DATE,email VARCHAR(50),phone VARCHAR(15),department_id int,FOREIGN KEY(department_id) REFERENCES Department(department_id)
+
+Insertion of data:
+INSERT INTO Department(department_id,department_name) VALUES (101,'cse'),(102,'ece'),(103,'eee'),(104,'civil'),(105,'mech');
+INSERT INTO Employees(employee_id,first_name,last_name,date_of_birth,email,phone,department_id) VALUES
+(1,'rathan','raju','2003-06-08','rathanraju45@gmail.com',6309804683,101),
+(2,'neeraj','ganta','2004-08-08','neeraj123@gmail.com',9829876909,103),
+(3,'subbu','star','2004-03-09','subbu432@gmail.com',98763763898,104),
+(4,'anvesh','gupta','2004-01-04','anvesh198@gmail.com',8789890987,102),
+(5,'balu','yadala','2003-02-04','balu865@gmail.com',7893839983,101)

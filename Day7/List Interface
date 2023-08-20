@@ -1,0 +1,4 @@
+List Interface:
+The interface is an outline of the method for a particular class to implement. Here the arraylist, linked list,
+implements the list's interface. You can use the methods that are defined in the list interface for array list and
+linked list.

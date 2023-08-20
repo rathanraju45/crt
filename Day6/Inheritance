@@ -1,0 +1,43 @@
+Inheritance:
+=>Inheritance is used to store information and manage the information in a hierarichal order.
+=>It is the process of defining a new class based on an existing class where a child acquires the properties of the parent
+class.
+=>The subclass(Child/Derived class) inherits the properties of the parent class, and the class from which the properties
+are inherited is called Super class.
+=>Inheritance allows us to reuse code and improve the reusability in java applications so that the class has to write
+only the unique feature and rest of the common properties and functionalities can be extended by the other class.
+
+Terminology:
+Super class : Super class is a class whose properties and behaviour are used by the child class.
+Sub Class   : Sub class is a class that inherits the properties of another class.
+Reusability : Inheritance allows the reuse of code. When we create a new class and there is already a class that include
+              some common properties or feature that class has to write, it cn be driven to the new class from the
+              existing class by reusing the field and methods.
+
+Extend Keyword:
+Extend keyword is used to inherit the properties of the class.
+
+Super Keyword:
+The super keyword in java is a reference a reference variable which is used to refer immediate parent class object.
+
+example program:
+
+class Parent{
+    void display(){
+        System.out.Println("This is the parent class.");
+    }
+}
+
+class Child extends Parent{
+    void display(){
+        super.display(); //calling display of parent class
+        System.out.println("This is child class.");
+    }
+}
+
+public class Main{
+    public static void main(String[] args){
+        Child c1=new Child();
+        c1.display();
+    }
+}
