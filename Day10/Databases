@@ -1,0 +1,80 @@
+Databases
+SQL:
+=>SELECT Statement:
+    =>The SQL SELECT statement is used to retrieve records from one or more tables in your SQL database. The records
+    retrieved are known as a result set.
+    Syntax:
+    SELECT EXPRESSIONS
+    from TABLES
+    [WHERE CONDITIONS]
+    [ORDER BY expression[ASC | DESC]];
+
+Practice Exercise1:
+Based on the employee table below, select all fields from the employee table whose salary is less than or equal to
+52,000/-(no sorting is required).
+
+Solution:
+CREATE TABLE employees
+(employee_number int NOT NULL,first_name char(50) NOT NULL,last_name char(50) NOT NULL,salary int,dept_id int,
+CONSTRAINT employee_pk PRIMARY KEY(employee_number));
+
+INSERT INTO employees(employee_number,first_name,last_name,salary,dept_id) values
+(1000,"john","smith",62000,500),
+(1002,"jane","anderson",57550,500),
+(1003,"Bard","Everest",71000,501),
+(1004,"Jacl","Hovarth",42000,501),
+(1005,"Rathan","Raju",80000,500)
+
+SELECT * FROM employees WHERE salary<=52000
+
+Task2:
+create a suppliers table select the unique city values that that reside in the state of california & order the results
+in descending order by city.
+
+CREATE TABLE suppliers
+(supplier_id int NOT NULL,supplier_name char(50),city char(25),state char(25),CONSTRAINT supplier_pk PRIMARY KEY(supplier_id));
+
+INSERT INTO suppliers
+(supplier_Id,supplier_name,city,state)
+values
+(101,"microsoft","vijayawada","Andhra pradesh"),
+(102,"apple","vishakapatnam","Andhra pradesh"),
+(103,"google","Hyderabad","Telangana"),
+(104,"amazon","Cyberabad","Telanagana"),
+(105,"Facebook","guntur","Andhra pradesh")
+
+SELECT * FROM suppliers WHERE state="Andhra pradesh" ORDER BY city; or
+SELECT DISTINCT city FROM suppliers WHERE state="Andhra pradesh" ORDER BY city DESC;
+
+Task3:
+Based on the customers table and the orders table, below, select the customer_id and last_name from the customers table
+and select the order_date from the orders table where there is a matching customer_id value in both the customers and
+orders tables. Order the results by customer_id in descending order.
+
+Customer table:
+customer_id,first_name,last_name,favourite_website,constraint(customer_id) Primary key
+
+CREATE TABLE customers(customer_id int PRIMARY KEY,first_name char(50),last_name varchar(50),favourite_website varchar(25),
+CONSTRAINT customer_pk PRIMARY KEY(customer_id))
+Orders:
+customer_id,order_date,constraint(order_id) primary key
+CREATE TABLE order(order_id int,customer_id FOREIGN KEY,order_date date,CONSTRAINT order_pk PRIMARY KEY(order_id));
+
+INSERT INTO customers(customer_id,first_name,last_name,favourite_website)
+values
+(101,"rathan","raju","amazon.com"),
+(102,"yadala","balu","flipkart.com"),
+(103,"subbu","star","google.com"),
+(104,"neeraj","ganta","bing.com"),
+(105,"anvesh","gupta","yahoo.com"),
+(106,"nagendruuuuu","guptuuuuu","openai.com")
+
+INSERT INTO orders(order_id,customer_id,order_date)
+values
+(1,101,12/06/2004),
+(2,103,12/09/2008),
+(3,106,25/10/1905)
+
+SELECT customers.last_name,orders.order_id,orders.order_date
+FROM customers
+JOIN orders on customers.customer_id=orders.customer_id
